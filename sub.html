@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>subarray</title>
+        <script type="text/javascript" src="underscore-min.js"></script>
+    </head>
+    <body>
+        <script> 
+            var arr = "12345";
+
+            var newArr = _.map(arr, function(num, key){ return num * arr[key-1]; });
+    
+            var iterator = function (num, key) {
+                return num*key;
+            }
+            console.log(newArr);
+        </script>
+
+    </body>
+</html>
+
