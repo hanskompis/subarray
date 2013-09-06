@@ -6,14 +6,48 @@
     </head>
     <body>
         <script> 
-            var arr = "12345";
+            var array = "123456789";
+            
+            var parseInteger = function(num) {return parseInt(num);};
+            
+            var sum = function(memo, num){ return memo + num; };
 
-            var newArr = _.map(arr, function(num, key){ return num * arr[key-1]; });
-    
+            var sumOfSubArray = function (subArr){
+                
+                return  _.reduce(_.map(_.first(subArr,3), parseInteger), sum, 0);
+               
+            } 
+            
             var iterator = function (num, key) {
-                return num*key;
+                
+                //                return key > 6 ? -(Number.MAX_VALUE) : sumOfSubArray(_.rest(array, key));
+                return key > 6 ? -(Number.MAX_VALUE) : sumOfSubArray(_.rest(array, key)); 
+
             }
-            console.log(newArr);
+
+            //            var newArr = sumOfSubArray(array);
+            var newArr = _.max(_.map(array, iterator));
+            
+            var toReturn = function (input) {
+                
+                var parseInteger = function(num) {return parseInt(num);};
+                var sum = function(memo, num){ return memo + num; };
+                var sumOfSubArray = function (subArr) {
+                
+                    return  _.reduce(_.map(_.first(subArr,3), parseInteger), sum, 0);
+                } 
+
+                var iterator = function (num, key) {
+ 
+                    return key > 6 ? -(Number.MAX_VALUE) : sumOfSubArray(_.rest(array, key)); 
+                }
+                
+                return _.max(_.map(input, iterator));
+            }
+            
+            //            console.log(toReturn("123456789"))
+            console.log(1*"1234" + 5)
+    
         </script>
 
     </body>
