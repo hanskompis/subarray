@@ -6,47 +6,48 @@
     </head>
     <body>
         <script> 
-            var array = "123456789";
+//            var array = "123456789";
             
-            var parseInteger = function(num) {return parseInt(num);};
-            
-            var sum = function(memo, num){ return memo + num; };
-
-            var sumOfSubArray = function (subArr){
-                
-                return  _.reduce(_.map(_.first(subArr,3), parseInteger), sum, 0);
-               
-            } 
-            
-            var iterator = function (num, key) {
-                
-                //                return key > 6 ? -(Number.MAX_VALUE) : sumOfSubArray(_.rest(array, key));
-                return key > 6 ? -(Number.MAX_VALUE) : sumOfSubArray(_.rest(array, key)); 
-
-            }
+//            var parseInteger = function(num) {return parseInt(num);};
+//            
+//            var sum = function(memo, num){ return memo + num; };
+//
+//            var sumOfSubArray = function (subArr){
+//                
+//                return  _.reduce(_.map(_.first(subArr,3), parseInteger), sum, 0);
+//               
+//            } 
+//            
+//            var iterator = function (num, key) {
+//                
+//                //                return key > 6 ? -(Number.MAX_VALUE) : sumOfSubArray(_.rest(array, key));
+//                return key > 6 ? -(Number.MAX_VALUE) : sumOfSubArray(_.rest(array, key)); 
+//
+//            }
 
             //            var newArr = sumOfSubArray(array);
-            var newArr = _.max(_.map(array, iterator));
+//            var newArr = function (array) _.max(_.map(array, iterator));
             
             var toReturn = function (input) {
                 
-                var parseInteger = function(num) {return parseInt(num);};
-                var sum = function(memo, num){ return memo + num; };
+                var parseInteger = function(num) { return parseInt(num); };
+                
+                var multiply = function(memo, num){ return memo * num; };
+                
                 var sumOfSubArray = function (subArr) {
                 
-                    return  _.reduce(_.map(_.first(subArr,3), parseInteger), sum, 0);
+                    return  _.reduce(_.map(_.first(subArr,5), parseInteger), multiply, 1);
                 } 
 
                 var iterator = function (num, key) {
  
-                    return key > 6 ? -(Number.MAX_VALUE) : sumOfSubArray(_.rest(array, key)); 
+                    return key > 995 ? -(Number.MAX_VALUE) : sumOfSubArray(_.rest(input, key)); 
                 }
                 
                 return _.max(_.map(input, iterator));
             }
             
-            //            console.log(toReturn("123456789"))
-            console.log(1*"1234" + 5)
+//            console.log(toReturn("123456789567345234645634999345998"))
     
         </script>
 
