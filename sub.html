@@ -30,13 +30,11 @@
             
             var toReturn = function (input) {
                 
-                var parseInteger = function(num) { return parseInt(num); };
-                
                 var multiply = function(memo, num){ return memo * num; };
                 
                 var sumOfSubArray = function (subArr) {
                 
-                    return  _.reduce(_.map(_.first(subArr, 5), parseInteger), multiply, 1);
+                    return  _.reduce(_.first(subArr, 5), multiply, 1);
                 } 
 
                 var iterator = function (num, key) {
@@ -46,8 +44,7 @@
                 
                 return _.max(_.map(input, iterator));
             }
-            
-//            console.log(toReturn("123456789567345234645634999345998"))
+
     
         </script>
 
